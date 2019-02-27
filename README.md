@@ -2,7 +2,11 @@
 
 ## Description
 
-*Bubble* is a web application that takes data from subreddits, extracts the keywords, and uses them to generate word clouds. Clicking any of the words redirects the user to a relevent article that is popular at the moment.
+*Bubble* is a web application that scrapes online sources for trending news, extracts the keywords, and uses them to generate word clouds based on how often each keyword appears. Clicking on any of the keywords redirects the user to a trending news article on the topic.
+
+Our objective was to redesign a common feature of everyday life with simplicity, usability and attractiveness. Instead of showing images and descriptions like traditional news platforms, *Bubble* uses Google Natural Language Processing to summarize news articles into keywords. The results are displayed to the user in popularity-based word clouds in the following categories: General, Science & Technology, Canada, Politics, Entertainment, and Sports.
+
+## Screenshots
 
 ![sports](https://user-images.githubusercontent.com/34670205/53299110-5f376000-3804-11e9-9fc3-ed5ff33d9037.png)
 
@@ -27,4 +31,4 @@ Frontend: [Annie Gao](https://github.com/tallspider) & [Joseph Wang](https://git
 
 Backend: [Ian Gu](https://github.com/iangu48) & [Alice Cai](https://github.com/alice-cai)
 
-This project was created in under 36 hours at Hack the Valley 2019.
+This project was created at Hack the Valley 2019.
