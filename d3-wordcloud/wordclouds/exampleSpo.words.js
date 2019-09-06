@@ -1,6 +1,6 @@
 
 var xmlhttp = new XMLHttpRequest();
-var url = "http://25.52.7.1:3000/entertainment";
+var url = "http://localhost:3000/sports";
 var words;
 var myArr;
 xmlhttp.onreadystatechange = function() {
@@ -25,5 +25,5 @@ xmlhttp.open("GET", url, true);
 xmlhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
 xmlhttp.setRequestHeader('Content-Type', 'application/json');
 
-xmlhttp.withCredentials = true;
+// xmlhttp.withCredentials = true;
 xmlhttp.send();

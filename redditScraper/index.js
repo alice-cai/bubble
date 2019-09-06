@@ -30,6 +30,9 @@ async function scrapeData(subreddits) {
 	$('div#siteTable > div.link').each(function(index) {
 		let title = $(this).find('p.title > a.title').text().trim();
 		let href =  $(this).find('p.title > a.title').attr('href').trim();
+		if (href.slice(0, 3) === "/r/") {
+			href = 'https://old.reddit.com'.concat(href);
+		}
 		scrapedData.data.push({"text": title, "link": href})
 	});
 

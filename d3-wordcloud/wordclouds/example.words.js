@@ -1,14 +1,18 @@
 
 var xmlhttp = new XMLHttpRequest();
-var url = "http://25.52.7.1:3000/science-and-technology";
+var url = "http://localhost:3000/";
 var words;
 var myArr;
+
+xmlhttp.open("GET", url, true);
+
 xmlhttp.onreadystatechange = function() {
   console.log(this.responseText);
     //words = JSON.parse(this.responseText).data;
     if (this.readyState == 4 && this.status == 200) {
-        words = JSON.parse(this.responseText);
-        words = words.data;
+        var words = JSON.parse(this.responseText);
+        var words = words.data;
+        console.log(this.responseText);
         d3.wordcloud()
           .size([1000, 600])
           //.fill(d3.scale.ordinal().range(["#ff998c", "#ffe48c", "#c9ff8c", "#8ccfff", "#e28cff"]))
@@ -21,9 +25,9 @@ xmlhttp.onreadystatechange = function() {
           .start();
     }
 };
-xmlhttp.open("GET", url, true);
-xmlhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
-xmlhttp.setRequestHeader('Content-Type', 'application/json');
 
-xmlhttp.withCredentials = true;
+// xmlhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+// xmlhttp.setRequestHeader('Content-Type', 'application/json');
+
+// xmlhttp.withCredentials = true;
 xmlhttp.send();
