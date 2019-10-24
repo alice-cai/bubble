@@ -6,7 +6,7 @@
 
 Our objective was to redesign a common feature of everyday life with simplicity, usability and attractiveness. Instead of showing images and descriptions like traditional news platforms, *Bubble* uses Google Natural Language Processing to summarize news articles into keywords. The results are displayed to the user in popularity-based word clouds in the following categories: General, Science & Technology, Canada, Politics, Entertainment, and Sports.
 
-Click [here](https://iangu48.github.io/works/bubble/example.html) to see the final product (it may take about 30 sec to load if the Heroku web dyno has gone to sleep).
+Click [here](https://iangu.me/works/bubble/index.html) to see the final product (it may take about 30 seconds to load if the Heroku web dyno has gone to sleep).
 
 ## Screenshots
 
