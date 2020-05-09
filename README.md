@@ -6,7 +6,7 @@
 
 Our objective was to redesign a common feature of everyday life with simplicity, usability and attractiveness. Instead of showing images and descriptions like traditional news platforms, *Bubble* uses Google Natural Language Processing to summarize news articles into keywords. The results are displayed to the user in popularity-based word clouds in the following categories: General, Science & Technology, Canada, Politics, Entertainment, and Sports.
 
-Click [here](https://iangu.me/works/bubble/index.html) to see the final product (it may take about 30 seconds to load if the Heroku web dyno has gone to sleep).
+Click [here](http://bubble-io.herokuapp.com/) to see the final product (it may take about 30 seconds to load if the Heroku web dyno has gone to sleep).
 
 ## Screenshots
 
@@ -34,3 +34,45 @@ Frontend: [Annie Gao](https://github.com/tallspider) & [Joseph Wang](https://git
 Backend: [Ian Gu](https://github.com/iangu48) & [Alice Cai](https://github.com/alice-cai)
 
 This project was created at Hack the Valley 2019.
+
+## Development Instructions
+
+To run this app, you will need Google Cloud credentials. See [this documenation](https://cloud.google.com/docs/authentication/getting-started) for more information.
+
+### Developing Locally
+
+#### Setting up GCP Credentials
+
+Download your Google Cloud API credentials and put them in `auth.json` (or whatever you want to call it). Run this command in your terminal:
+
+```
+export GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
+e.g. export GOOGLE_APPLICATION_CREDENTIALS="auth.json"
+```
+
+Create an `.env` file and set the following environment variables:
+
+```
+GOOGLE_PRIVATE_KEY=<your api key>
+GOOGLE_CLIENT_EMAIL=<your client email>
+GOOGLE_APPLICATION_CREDENTIALS=<your credentials file e.g. auth.json>
+```
+
+You can find your private key and client email in `auth.json`.
+
+#### Starting the Server
+
+In the root directory:
+
+```
+npm install
+node index.js
+```
+
+The app should now be running at `http://localhost:3000/`.
+
+### Deploying to Heroku
+
+See [this documentation](https://devcenter.heroku.com/articles/deploying-nodejs) for a refresher on how to deploy Node.js apps on Heroku.
+
+If you don't have your environment variables configured on Heroku, go to Your Project > Settings > Reveal Config Vars. Set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable, the same way we did it in the `.env` file.
