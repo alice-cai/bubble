@@ -37,7 +37,7 @@ This project was created at Hack the Valley 2019.
 
 ## Development Instructions
 
-To run this app, you will need Google Cloud credentials. See [this documenation](https://cloud.google.com/docs/authentication/getting-started) for more information.
+To run this app, you will need Google Cloud credentials. See [this documentation](https://cloud.google.com/docs/authentication/getting-started) for more information.
 
 ### Developing Locally
 
@@ -50,15 +50,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="[PATH]"
 e.g. export GOOGLE_APPLICATION_CREDENTIALS="auth.json"
 ```
 
-Create an `.env` file and set the following environment variables:
-
-```
-GOOGLE_PRIVATE_KEY=<your api key>
-GOOGLE_CLIENT_EMAIL=<your client email>
-GOOGLE_APPLICATION_CREDENTIALS=<your credentials file e.g. auth.json>
-```
-
-You can find your private key and client email in `auth.json`.
+**Note:** This variable only applies to your current shell session, so if you open a new session, you have to set the variable again.
 
 #### Starting the Server
 
@@ -66,7 +58,7 @@ In the root directory:
 
 ```
 npm install
-node index.js
+node server.js
 ```
 
 The app should now be running at `http://localhost:3000/`.
@@ -75,4 +67,8 @@ The app should now be running at `http://localhost:3000/`.
 
 See [this documentation](https://devcenter.heroku.com/articles/deploying-nodejs) for a refresher on how to deploy Node.js apps on Heroku.
 
-If you don't have your environment variables configured on Heroku, go to Your Project > Settings > Reveal Config Vars. Set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable, the same way we did it in the `.env` file.
+If you don't have your environment variables configured on Heroku, go to Your Project > Settings > Reveal Config Vars. Create the `GOOGLE_APPLICATION_CREDENTIALS` environment variable and set it to the path to your Google API credentials file.
+
+```
+GOOGLE_APPLICATION_CREDENTIALS=auth.json
+```

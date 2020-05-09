@@ -1,8 +1,9 @@
 const express = require('express');
-const app = express();
 const mcache = require('memory-cache');
 const path = require('path');
-const retrieve = require('./retrieve.js');
+const retrieve = require('./news-scraper/retrieve.js');
+
+const app = express();
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -98,7 +99,7 @@ app.get('/canada', cache(1800), function (req, res) {
 	console.log("/canada request made");
 })
 app.get('/politics', cache(1800), function (req, res) {
-	retrieve.getData(["politics", "worldpolitics", "ukpolitics", "eupolitics", "uspolitics"]).then(res.json.bind(res));
+	retrieve.getData(["politics", "ukpolitics", "eupolitics", "uspolitics"]).then(res.json.bind(res));
 
 	console.log(req.headers);
 	console.log("/politics request made");

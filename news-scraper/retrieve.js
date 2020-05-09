@@ -1,8 +1,6 @@
 
 const google = require('./google.js');
-const reddit = require('./redditScraper/index.js');
-
-
+const reddit = require('./reddit-scraper.js');
 
 async function getData(subReddits) {
 	let redditData = await reddit.scrapeData(subReddits);
